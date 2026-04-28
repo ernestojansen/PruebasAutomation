@@ -27,6 +27,8 @@ public class HomePage {
 	By addToCartButton = By.xpath("//a[@data-product-id='1']");
 	By successMessage = By.xpath("//p[text()='Your product has been added to cart.']");
 	By viewCartButton = By.xpath("//a[.//u[text()='View Cart']]");
+	By brandOption = By.cssSelector("a[href*='brand_products/Polo']");
+	By poloCount = By.cssSelector("a[href*='Polo'] span.pull-right");
 	
 	public void scrollToElement(By locator) {
 		WebDriverWait waitHome = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -63,6 +65,14 @@ public class HomePage {
 		WebDriverWait waitMessage = new WebDriverWait(driver,Duration.ofSeconds(10));
 		WebElement message = waitMessage.until(ExpectedConditions.visibilityOfElementLocated(successMessage));
 		return message.getText();
+	}
+	
+	public void scrollToBrandOption() {
+		scrollToElement(brandOption);
+	}
+	
+	public String getPoloCount() {
+		return driver.findElement(poloCount).getText();
 	}
 }
 

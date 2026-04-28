@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import POMpractice.base.BaseTest;
 import POMpractice.pages.RegisterPage;
+import POMpractice.utils.DataGenerator;
 
 public class RegisterTest extends BaseTest {
 
@@ -14,9 +15,10 @@ public void registerNewUser() {
 	
 	registerPage.goToRegisterPage();
 	
-	registerPage.registerUser("Jhon","jduh@test.com");
+	String nameGenerated = DataGenerator.generateName();
+	String emailGenerated = DataGenerator.generateEmail();
 	
+	registerPage.registerUser(nameGenerated, emailGenerated);
 	
-		
 	}
 }

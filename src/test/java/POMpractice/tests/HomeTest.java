@@ -24,4 +24,27 @@ public class HomeTest extends BaseTest{
 
 	}
 	
+	@Test
+	public void numberOfProducts() {
+		HomePage homePage = new HomePage(driver);
+		
+		homePage.goToHomePage();
+		homePage.scrollToBrandOption();
+		String actualNumber = homePage.getPoloCount();
+		
+		AssertEquals("(6)", actualNumber);
+		
+		
+
+
+	}
+
+	private void AssertEquals(String string, String actualNumber) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+
 }
+

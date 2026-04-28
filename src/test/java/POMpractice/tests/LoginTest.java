@@ -28,7 +28,12 @@ public class LoginTest extends BaseTest {
 		loginPage.enterPassword("password1234");
 		loginPage.clickLogin();
 		
-		assertEquals("Your email or password is incorrect!", loginPage.getErrorMessage());
+		assertEquals("Your email or password is incorrect!o", loginPage.getErrorMessage());
 	}
 
+	@Test
+	public void testFail() {
+		System.out.println("Running test...");
+		assertTrue(false);
+	}
 }
